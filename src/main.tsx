@@ -6,7 +6,10 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 
 // components
+
+//@ts-ignore
 import App from "./components/App/App";
+//@ts-ignore
 import { store } from "./redux";
 
 // assets
