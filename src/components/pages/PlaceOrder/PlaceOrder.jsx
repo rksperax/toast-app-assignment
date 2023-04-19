@@ -12,7 +12,7 @@ import {
   PrimaryButton,
 } from "../../common";
 import { routes } from "../../App/routes";
-import { modalsActions } from "../../../redux/modals/actions";
+import { modalsActions, orderActions } from "../../../redux/modals/actions";
 
 // assets
 import styles from "./PlaceOrder.module.scss";
@@ -85,12 +85,7 @@ export const PlaceOrder = () => {
           <h2>
             Place Order
             {items && (
-              <div
-                className={styles.icon}
-                onClick={() =>
-                  dispatch(modalsActions.setShowModal("Complaints"))
-                }
-              >
+              <div className={styles.icon}>
                 <WarningSvg />
               </div>
             )}
