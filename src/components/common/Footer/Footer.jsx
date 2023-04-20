@@ -14,7 +14,7 @@ import { ReactComponent as BookSvg } from "../../../assets/images/icons/book-ope
 import { ReactComponent as ShoppingSvg } from "../../../assets/images/icons/shopping-bag.svg";
 import { ReactComponent as CloseSvg } from "../../../assets/images/icons/close.svg";
 import { useSelector } from "react-redux";
-import { getOrders } from "../../../redux/modals/selectors";
+import { getOrders } from "../../../redux/app/selectors";
 
 export const Footer = () => {
   const [showMenu, setShowMenu] = useState(false);

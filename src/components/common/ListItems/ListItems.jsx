@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
 //library
-import { useDispatch } from "react-redux";
+
 import { Link } from "react-router-dom";
 
 // components
 import { AddButton } from "../AddButton/AddButton";
 import { VeganStatus } from "../VeganStatus/VeganStatus";
-import { modalsActions } from "../../../redux/modals/actions";
 
 // assets
 import styles from "./ListItems.module.scss";
@@ -24,15 +23,9 @@ export const ListItems = ({
   setShow,
   isAddButton = true,
 }) => {
-  const dispatch = useDispatch();
-
   const [instructionAdded, setInstructionAdded] = useState(false);
   const showItems = (e) => {
     e.target.parentElement.classList.toggle(styles.hide);
-  };
-
-  const addProduct = () => {
-    dispatch(modalsActions.setShowModal("Add Product"));
   };
 
   return items.map((item) => (
@@ -97,9 +90,7 @@ export const ListItems = ({
                 {isAddButton ? (
                   <AddButton product={product} />
                 ) : (
-                    <div className={styles.orderCount}>
-                    {product.orderCount}
-                  </div>
+                  <div className={styles.orderCount}>{product.orderCount}</div>
                 )}
               </div>
             </div>

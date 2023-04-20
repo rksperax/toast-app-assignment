@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { orderActions } from "../../../redux/modals/actions";
-import { getOrders } from "../../../redux/modals/selectors";
+import { setOrder } from "../../../redux/app/actions";
+import { getOrders } from "../../../redux/app/selectors";
 
 // styles
 import styles from "./AddButton.module.scss";
@@ -12,7 +12,7 @@ export const AddButton = ({ product }) => {
   const dispatch = useDispatch();
 
   const addButton = () => {
-    dispatch(orderActions.setOrder([...orders, { ...product, orderCount: 1 }]));
+    dispatch(setOrder([...orders, { ...product, orderCount: 1 }]));
   };
 
   const count = useMemo(() => {
@@ -38,7 +38,7 @@ export const AddButton = ({ product }) => {
           orderCount: _orders[_index].orderCount - 1,
         };
       }
-      dispatch(orderActions.setOrder(_orders));
+      dispatch(setOrder(_orders));
     } else {
       _orders[_index] = {
         ..._orders[_index],
@@ -46,7 +46,7 @@ export const AddButton = ({ product }) => {
           ? _orders[_index].orderCount + 1
           : 1,
       };
-      dispatch(orderActions.setOrder(_orders));
+      dispatch(setOrder(_orders));
     }
   };
 

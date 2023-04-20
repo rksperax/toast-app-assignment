@@ -12,14 +12,14 @@ import {
   PrimaryButton,
 } from "../../common";
 import { routes } from "../../App/routes";
-import { modalsActions, orderActions } from "../../../redux/modals/actions";
+import { setOrder } from "../../../redux/app/actions";
 
 // assets
 import styles from "./PlaceOrder.module.scss";
 import saly6 from "../../../assets/images/saly-6.png";
 import { ReactComponent as BackSvg } from "../../../assets/images/icons/arrow-back.svg";
 import { ReactComponent as WarningSvg } from "../../../assets/images/icons/warning.svg";
-import { getOrders } from "../../../redux/modals/selectors";
+import { getOrders } from "../../../redux/app/selectors";
 import chocolate from "../../../assets/images/chocolate.png";
 import sunset from "../../../assets/images/sunset.png";
 
@@ -71,7 +71,7 @@ export const PlaceOrder = () => {
 
   const onPlaceOrder = () => {
     navigate("/special");
-    dispatch(orderActions.setOrder(previousOrders));
+    dispatch(setOrder(previousOrders));
   };
 
   return (

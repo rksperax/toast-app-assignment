@@ -1,8 +1,5 @@
 import { combineReducers } from "redux";
 
-import {
-  modalsReducer as modals,
-  ordersReducer as orders,
-} from "./modals/reducer";
+import app from "./app/reducer";
 
-export const rootReducer = combineReducers({ modals, orders });
+export const rootReducer = combineReducers({ app });

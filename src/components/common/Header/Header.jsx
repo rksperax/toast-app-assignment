@@ -2,12 +2,10 @@
 import React from "react";
 
 // library
-import { Link, NavLink, useLocation, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { NavLink, useLocation } from "react-router-dom";
 
 // components
 import { routes } from "../../App/routes";
-import { modalsActions } from "../../../redux/modals/actions";
 
 // assets
 import styles from "./Header.module.scss";
